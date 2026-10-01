@@ -22,6 +22,7 @@ MKDIR := mkdir
 NULL := /dev/null
 endif
 
+CGB_LOGO := CGB_logo.png
 PB12_COMPRESS := pb12$(EXESUFFIX)
 
 RGBASM  := $(RGBDS)rgbasm
@@ -34,7 +35,7 @@ default: clean bootroms vmem
 .PHONY : bootroms
 bootroms: cgb_boot.bin cgb_boot_fast.bin
 
-%.2bpp: %.png
+CGB_logo.2bpp: $(CGB_LOGO)
 	-@$(MKDIR) -p $(dir $@)
 	$(RGBGFX) -Z -c embedded -o $@ $<
 

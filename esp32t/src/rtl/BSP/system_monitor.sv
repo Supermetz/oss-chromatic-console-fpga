@@ -189,7 +189,7 @@ module system_monitor(
                     begin
                         gbc_color_temp <= gbc_color_temp + 3'd1;
                         request_SystemStatusExtended <= 1'b1;
-            end
+                    end
                     else if (~gbc_mode)
                     begin
                         palette_hotkey_event <= PALETTE_HOTKEY_EVENT_UP;
@@ -236,9 +236,9 @@ module system_monitor(
             if (write_done && tx_channel == 8 && request_SystemStatusExtended) begin
                 request_SystemStatusExtended <= 1'b0;
                 palette_hotkey_event <= PALETTE_HOTKEY_EVENT_NONE;
-        end
+            end
 
-    end
+        end
     end
 
     reg menuDown = 1'b0;
